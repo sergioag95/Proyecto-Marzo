@@ -39,7 +39,7 @@
 			<tr th:each="usuario:${listaUsuarios}">
 			
 				<td>
-					<a th:href="@{/usuarios/{id}(id=${usuario.id})}" class="btn btn-primary btn-sm">
+					<a class="btn btn-primary btn-sm">
 						<span th:text="${usuario.id}"></span>
 					</a>
 				</td>

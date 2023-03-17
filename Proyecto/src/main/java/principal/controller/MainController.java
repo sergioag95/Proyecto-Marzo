@@ -1,12 +1,12 @@
 package principal.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;  
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import principal.modelo.Equipo;
 import principal.modelo.Jugador;
+import principal.modelo.Leyendas;
 import principal.modelo.Partido;
 import principal.modelo.Usuario;
 import principal.persistencia.EquipoRepo;
@@ -42,11 +42,24 @@ public class MainController {
 	@Autowired
 	private PartidoServiceImpl partidoService;
 	
+	@Autowired
+	private JugadorServiceImpl leyendaService;
+	
 	
 	public void crearTablas() {
 		
 
+		Equipo e1 = new Equipo();
 		
+		e1.setNombre("Equipo Ejemplo 1");
+		
+		Equipo e2 = new Equipo();
+		
+		e2.setNombre("Equipo Ejemplo 2");
+		
+		equipoService.insertarEquipo(e1);
+		equipoService.insertarEquipo(e2);
+/*
 		String[][] equipos = {{"Atlanta", "Hawks"},
                 {"Boston", "Celtics"},
                 {"Brooklyn", "Nets"},
@@ -89,15 +102,42 @@ equipoRepo.save(e);
 		j.setNombre("Jugador Ejemplo");
 		j.setEquipo(e);
 		jugadorService.insertarJugador(j);
+		
+		
+		Leyendas l = new Leyendas();
+		l.setNombre("Leyenda Ejemplo");
+		l.setEquipo(e);
+		leyendaService.insertarJugador(l);		
 	}
 
 
 // Realizar acciones con cada instancia de la clase Equipo creada
 }
-		
+	*/	
 		// Creamos Jugadores
 
 		
+		Jugador j = new Jugador();
+		j.setNombre("Jugador Ejemplo");
+		j.setEquipo(e1);
+		jugadorService.insertarJugador(j);
+		
+		
+		Leyendas l = new Leyendas();
+		l.setNombre("Leyenda Ejemplo");
+		l.setEquipo(e1);
+		leyendaService.insertarJugador(l);	
+		
+		Jugador j1 = new Jugador();
+		j1.setNombre("Jugador Ejemplo");
+		j1.setEquipo(e2);
+		jugadorService.insertarJugador(j);
+		
+		
+		Leyendas l1 = new Leyendas();
+		l1.setNombre("Leyenda Ejemplo");
+		l1.setEquipo(e2);
+		leyendaService.insertarJugador(l);	
 
 
 		
@@ -105,19 +145,18 @@ equipoRepo.save(e);
 		
 		
 		Partido p1 = new Partido ();
-		/*
+		
 		p1.setLocal(e1);
 		p1.setVisitante(e2);
 		p1.setLocal_res(125);
 		p1.setVisitante_res(123);		
 		
-		equipoService.insertarEquipo(e1);
-		equipoService.insertarEquipo(e2);
+	
 		
 		
 		partidoService.insertarPartido(p1);
 		
-		equipoRepo.save(e1);*/
+		equipoRepo.save(e1);
 		
 		}
 	
