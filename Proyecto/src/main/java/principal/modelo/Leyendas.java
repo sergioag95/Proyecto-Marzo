@@ -23,5 +23,13 @@ public class Leyendas extends Jugador{
 	
 	 @ManyToMany(mappedBy = "leyendas")
 	    private List<Equipo> equipos;
+
+	public List<Equipo> getEquipos() {
+		return equipos;
+	}
+
+	
+	 
+	 
 	
 }

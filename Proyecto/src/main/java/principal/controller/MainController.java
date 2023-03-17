@@ -1,5 +1,7 @@
 package principal.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +10,6 @@ import principal.modelo.Equipo;
 import principal.modelo.Jugador;
 import principal.modelo.Leyendas;
 import principal.modelo.Partido;
-import principal.modelo.Usuario;
 import principal.persistencia.EquipoRepo;
 import principal.servicio.imp.EquipoServiceImpl;
 import principal.servicio.imp.JugadorServiceImpl;
@@ -131,13 +132,13 @@ equipoRepo.save(e);
 		Jugador j1 = new Jugador();
 		j1.setNombre("Jugador Ejemplo");
 		j1.setEquipo(e2);
-		jugadorService.insertarJugador(j);
+		jugadorService.insertarJugador(j1);
 		
 		
 		Leyendas l1 = new Leyendas();
 		l1.setNombre("Leyenda Ejemplo");
 		l1.setEquipo(e2);
-		leyendaService.insertarJugador(l);	
+		leyendaService.insertarJugador(l1);	
 
 
 		
