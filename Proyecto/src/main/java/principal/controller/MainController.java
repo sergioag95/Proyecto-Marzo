@@ -45,31 +45,67 @@ public class MainController {
 	
 	public void crearTablas() {
 		
-	
-		Usuario usuario = new Usuario("user", "user", "user");
-		
-		usuarioService.insertarUsuario(usuario);
 
 		
-		Equipo e1= new Equipo ("Golden State Warriors");
-		Equipo e2= new Equipo ("Cleveland Cavaliers");
+		String[][] equipos = {{"Atlanta", "Hawks"},
+                {"Boston", "Celtics"},
+                {"Brooklyn", "Nets"},
+                {"Charlotte", "Hornets"},
+                {"Chicago", "Bulls"},
+                {"Cleveland", "Cavaliers"},
+                {"Dallas", "Mavericks"},
+                {"Denver", "Nuggets"},
+                {"Detroit", "Pistons"},
+                {"Golden State", "Warriors"},
+                {"Houston", "Rockets"},
+                {"Indiana", "Pacers"},
+                {"LA", "Clippers"},
+                {"LA", "Lakers"},
+                {"Memphis", "Grizzlies"},
+                {"Miami", "Heat"},
+                {"Milwaukee", "Bucks"},
+                {"Minnesota", "Timberwolves"},
+                {"New Orleans", "Pelicans"},
+                {"New York", "Knicks"},
+                {"Oklahoma City", "Thunder"},
+                {"Orlando", "Magic"},
+                {"Philadelphia", "76ers"},
+                {"Phoenix", "Suns"},
+                {"Portland", "Trail Blazers"},
+                {"Sacramento", "Kings"},
+                {"San Antonio", "Spurs"},
+                {"Toronto", "Raptors"},
+                {"Utah", "Jazz"},
+                {"Washington", "Wizards"}};
+
+for (int i = 0; i < equipos.length; i++) {
+Equipo e = new Equipo(equipos[i][0], equipos[i][1]);
+equipoService.insertarEquipo(e);
+equipoRepo.save(e);
+
+	for (int z = 0; z < 5; z++) {
+	
+		Jugador j = new Jugador();
+		j.setNombre("Jugador Ejemplo");
+		j.setEquipo(e);
+		jugadorService.insertarJugador(j);
+	}
+
+
+// Realizar acciones con cada instancia de la clase Equipo creada
+}
 		
 		// Creamos Jugadores
 
-		Jugador j1 = new Jugador();
 		
-		j1.setNombre("Sergio");
-		
+
 
 		
 		// Creamos Equipos
 		
-
-		
-		j1.setEquipo(e1);
 		
 		Partido p1 = new Partido ();
-		
+		/*
 		p1.setLocal(e1);
 		p1.setVisitante(e2);
 		p1.setLocal_res(125);
@@ -78,11 +114,10 @@ public class MainController {
 		equipoService.insertarEquipo(e1);
 		equipoService.insertarEquipo(e2);
 		
-		jugadorService.insertarJugador(j1);
 		
 		partidoService.insertarPartido(p1);
 		
-		equipoRepo.save(e1);
+		equipoRepo.save(e1);*/
 		
 		}
 	

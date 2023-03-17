@@ -36,8 +36,9 @@ public class Equipo {
 
 	}
 	
-	public Equipo(String nombre) {
+	public Equipo(String ciudad, String nombre) {
 		this.nombre = nombre;
+		this.ciudad = ciudad;
 	}
 
 	public int getId() {

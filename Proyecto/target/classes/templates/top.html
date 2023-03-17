@@ -1,0 +1,63 @@
+<div th:fragment="top">
+	<!-- Topbar -->
+	<!-- Topbar -->
+	<!-- Topbar -->
+	<!-- Topbar -->
+	<!-- Topbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary bg-dark p-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Proyecto<span>&#x1F3C0;</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item text-white">
+          <a class="nav-link" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item text-white">
+          <a class="nav-link" href="/usuarios">Usuarios</a>
+        </li>
+        <li class="nav-item text-white">
+          <a class="nav-link" href="/equipos">Equipos</a>
+        </li>
+        <li class="nav-item text-white">
+          <a class="nav-link" href="/jugadores">Jugadores</a>
+        </li>
+        <li class="nav-item text-white">
+          <a class="nav-link" href="/partidos">Partidos</a>
+        </li>
+      </ul>
+    </div>
+    <li sec:authorize="isAuthenticated()" class="nav-item text-light list-unstyled">
+						
+						<a class="nav-link text-light" aria-haspopup="true" aria-expanded="false">
+							 
+							 	Hola: <span sec:authentication = "principal.username" /> 
+						    
+						</a>
+						
+					</li>
+					 
+					<div class="topbar-divider d-none d-sm-block">
+
+						<li sec:authorize="isAnonymous()" class="nav-link  text-gray-600">
+							<a class="btn btn-primary btn-sm  " href="/login">Login</a>
+						</li>
+						<li sec:authorize="isAuthenticated()"class="nav-link  text-gray-600">
+						<form th:action="@{/logout}" method="post">
+							<input class="btn btn-primary btn-sm " type="submit" value="Sign Out" />
+						</form>
+						</li>
+					</div>
+				</ul>
+
+			</nav>
+			<!-- End of Topbar -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+				aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+  </div>
+</nav>

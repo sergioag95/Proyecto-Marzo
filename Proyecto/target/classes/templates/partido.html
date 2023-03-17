@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+	
+	<div th:insert="librerias::librerias"></div>
+	
+</head>
+<body>
+
+
+<header>
+
+	<div th:insert="top::top"></div>
+
+</header>
+
+
+<div class="row pl-5 pr-5">
+
+	<div class="col-9">
+		<h5 class="m-3"> Ficha del partido </h5>
+		
+		<div class="card border primary" th:object="${partidoaMostrar}">
+			
+			<div class="card-body row pt-4 pb-4">
+				
+				<div class="col-7">
+					<div class="card">
+						<div class="card-header text-dark bg-light">Ficha del partido</div>
+						<div class="card-body">
+							<div class="mb-2">
+								<a>Partido Nº:</a>
+								<h5 th:text="*{id}" class="mb-2 card-text">Id del partido</h5>
+							</div>
+							<div class="mb-2">
+							
+								<a>Equipo Visitante:</a>
+								<h5 th:text="*{visitante.nombre}" class="mb-2 card-text">Visistante</h5>
+								<a>Puntuación:</a>
+								<h5 th:text="*{visitante_res}" class="mb-2 card-text">Puntuación Visistante</h5>
+								
+							</div>
+							<div class="mb-2">
+								
+								<a>Equipo Local:</a>
+								<h5 th:text="*{local.nombre}" class="mb-2 card-text">Visistante</h5>
+								<a>Puntuación:</a>
+								<h5 th:text="*{local_res}" class="mb-2 card-text">Puntuación Local</h5>
+								
+							</div>
+							<p><a th:href="@{/jugadores}" class="btn btn-primary mt-3">Cerrar</a></p>
+						</div>
+						</div>
+					</div>
+					
+					
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+
+
+
+
+</div>	
+</body>
