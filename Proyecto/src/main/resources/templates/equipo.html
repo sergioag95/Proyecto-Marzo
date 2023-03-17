@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+	
+	<div th:insert="librerias::librerias"></div>
+	
+</head>
+<body>
+
+
+<header>
+
+	<div th:insert="top::top"></div>
+
+</header>
+
+
+<div class="row pl-5 pr-5">
+
+	<div>
+		
+		<div class="card border primary" th:object="${equipoaMostrar}">
+			
+			<div class="card-body row pt-4 pb-4">
+				
+				<div>
+					<div class="card m-3">
+						<div class="card-header text-dark bg-light">Ficha del equipo</div>
+						<div class="card-body">
+							<div class="mb-2">
+								<a>Nombre:</a>
+								<h5 th:text="*{nombre}" class="mb-2 card-text">Nombre del equipo</h5>
+							</div>
+							<div class="mb-2">
+							
+								<a>Ciudad:</a>
+								<h5 th:text="*{ciudad}" class="mb-2 card-text">Nombre de la ciudad</h5>
+							</div>
+							
+							<p><a th:href="@{/equipos}" class="btn btn-primary mt-3">Cerrar</a></p>
+						</div>
+						</div>
+					</div>
+					
+					
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	
+
+
+
+
+</div>	
+</body>
+

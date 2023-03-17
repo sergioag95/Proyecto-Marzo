@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+	
+	<div th:insert="librerias::librerias"></div>
+	
+</head>
+<body>
+
+
+<header>
+
+	<div th:insert="top::top"></div>
+
+</header>
+
+
+<div class="row pl-5 pr-5">
+
+	<div class="col-9">
+		<h5 class="m-3"> Ficha de jugador </h5>
+		
+		<div class="card border primary" th:object="${jugadoraMostrar}">
+			
+			<div class="card-body row pt-4 pb-4">
+				
+				<div class="col-7">
+					<div class="card m-3">
+						<div class="card-header text-dark bg-light">Ficha del jugador</div>
+						<div class="card-body">
+							<div class="mb-2">
+								<a>Nombre:</a>
+								<h5 th:text="*{nombre}" class="mb-2 card-text">Nombre del jugador</h5>
+							</div>
+							<div class="mb-2">
+							
+								<a>Posición:</a>
+								<h5 th:text="*{posicion}" class="mb-2 card-text">Posicion del jugador</h5>
+							</div>
+							<div class="mb-2">
+								<a>Equipo:</a>
+								<h5 th:text="*{equipo.nombre}" class="mb-2 card-text">Nombre del equipo al que pertenece</h5>
+							</div>
+							<p><a th:href="@{/jugadores}" class="btn btn-primary mt-3">Cerrar</a></p>
+						</div>
+						</div>
+					</div>
+					
+					
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+
+
+
+
+</div>	
+</body>
